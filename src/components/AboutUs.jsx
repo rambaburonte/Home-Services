@@ -76,7 +76,7 @@ const AboutUs = () => {
             className="relative flex justify-center"
           >
             <img
-              src="public\image.png"
+              src="\image.png"
               alt="About Us"
               className="rounded-xl shadow-lg w-full max-w-md lg:max-w-lg"
             />
