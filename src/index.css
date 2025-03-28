@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0046BE;
+  --secondary: #002B72;
+  --accent: #FF6B00;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-primary text-white rounded-lg font-semibold 
+           transition-all duration-300 hover:bg-secondary 
+           transform hover:-translate-y-1 shadow-lg
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-white text-primary border-2 border-primary rounded-lg font-semibold 
+           transition-all duration-300 hover:bg-primary hover:text-white
+           transform hover:-translate-y-1 shadow-lg
+           focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+  
+  .container-padding {
+    @apply px-4 md:px-8;
+  }
+
+  .heading-primary {
+    @apply text-3xl md:text-4xl font-bold text-gray-800 mb-4;
+  }
+
+  .heading-secondary {
+    @apply text-xl md:text-2xl font-semibold text-gray-700 mb-3;
+  }
+
+  /* Mobile Optimizations */
+  @media (max-width: 768px) {
+    .btn-primary, .btn-secondary {
+      @apply w-full justify-center;
+    }
+
+    .section-padding {
+      @apply py-12;
+    }
+
+    .heading-primary {
+      @apply text-2xl;
+    }
+
+    .heading-secondary {
+      @apply text-xl;
+    }
+  }
+
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better Focus Styles */
+:focus {
+  @apply outline-none ring-2 ring-primary ring-opacity-50;
+}
+
+/* Loading Skeleton */
+.skeleton {
+  @apply animate-pulse bg-gray-200 rounded;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-secondary;
+}
